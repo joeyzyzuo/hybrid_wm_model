@@ -107,7 +107,7 @@ trialdata.emp <- readRDS("./trialdata_run.rds")
 
 # aggregate participant data
 d.emp <- trialdata.emp %>%
-  group_by(subid, version) %>%
+  group_by(id, version) %>%
   summarize(points_bc_emp = mean(points_bc, na.rm=T))
 
 colnames(d.emp) <-c("id","version","points_bc_emp")
